@@ -23,7 +23,7 @@ def compare(n: int):
     return insertion_time, selection_time
 
 def main():
-    sizes = [10, 50, 100, 500, 1000, 5000, 10000]
+    sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
     insertion_times = []
     selection_times = []
 
