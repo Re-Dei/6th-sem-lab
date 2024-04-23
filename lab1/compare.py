@@ -11,16 +11,16 @@ def compare(n: int):
     A = generateArray(n)
     
     begin = time.time()
+    mergesort(A)
+    end = time.time()
+    merge_time = end - begin
+    
+    begin = time.time()
     insertionsort(A)
     end = time.time()
     insertion_time = end - begin
 
-    begin = time.time()
-    mergesort(A)
-    end = time.time()
-    selection_time = end - begin
-
-    return insertion_time, selection_time
+    return insertion_time, merge_time
 
 def main():
     sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
