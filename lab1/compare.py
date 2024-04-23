@@ -25,18 +25,18 @@ def compare(n: int):
 def main():
     sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
     insertion_times = []
-    selection_times = []
+    merge_times = []
 
     for size in sizes:
-        insertion_time, selection_time = compare(size)
+        insertion_time, merge_time = compare(size)
         insertion_times.append(insertion_time)
-        selection_times.append(selection_time)
+        merge_times.append(merge_time)
 
     plt.plot(sizes, insertion_times, label='Insertion Sort')
-    plt.plot(sizes, selection_times, label='Selection Sort')
+    plt.plot(sizes, merge_times, label='Merge Sort')
     plt.xlabel('Array Size')
     plt.ylabel('Time (s)')
-    plt.title('Comparison of Insertion Sort and Selection Sort')
+    plt.title('Comparison of Insertion Sort and Merge Sort')
     plt.legend()
     plt.show()
 
