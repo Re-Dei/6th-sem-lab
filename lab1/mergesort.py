@@ -1,5 +1,5 @@
 ## mergesort.py
-def merge_sort(arr):
+def mergesort(arr):
   if len(arr) <= 1:
     return arr
   
@@ -7,8 +7,8 @@ def merge_sort(arr):
   left_half = arr[:mid]
   right_half = arr[mid:]
   
-  left_half = merge_sort(left_half)
-  right_half = merge_sort(right_half)
+  left_half = mergesort(left_half)
+  right_half = mergesort(right_half)
   
   return merge(left_half, right_half)
 

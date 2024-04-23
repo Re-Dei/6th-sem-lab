@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from selectionsort import selectionsort
+from mergesort import mergesort
 from insertionsort import insertionsort
 import time
 
@@ -16,7 +16,7 @@ def compare(n: int):
     insertion_time = end - begin
 
     begin = time.time()
-    selectionsort(A)
+    mergesort(A)
     end = time.time()
     selection_time = end - begin
 
