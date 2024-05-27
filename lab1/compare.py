@@ -9,6 +9,7 @@ def generateArray(n: int):
 
 def compare(n: int):
     A = generateArray(n)
+    B = A
     
     begin = time.time()
     mergesort(A)
@@ -16,7 +17,7 @@ def compare(n: int):
     merge_time = end - begin
     
     begin = time.time()
-    insertionsort(A)
+    insertionsort(B)
     end = time.time()
     insertion_time = end - begin
 
