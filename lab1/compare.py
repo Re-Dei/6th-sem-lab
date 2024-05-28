@@ -24,7 +24,7 @@ def compare(n: int):
     return insertion_time, merge_time
 
 def main():
-    sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+    sizes = [0, 150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500]
     insertion_times = []
     merge_times = []
 
