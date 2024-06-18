@@ -1,6 +1,10 @@
+import unittest
+
+
 def knapsack_memoization(weights, values, capacity):
     n = len(weights)
     memo = [[-1 for j in range(capacity + 1)] for i in range(n)]
+
     def knapsack_recursive(i, capacity):
         if i == n:
             return 0
@@ -9,11 +13,14 @@ def knapsack_memoization(weights, values, capacity):
         if weights[i] > capacity:
             memo[i][capacity] = knapsack_recursive(i + 1, capacity)
         else:
-            memo[i][capacity] = max(knapsack_recursive(i + 1, capacity), values[i] + knapsack_recursive(i + 1, capacity - weights[i]))
+            memo[i][capacity] = max(
+                knapsack_recursive(i + 1, capacity),
+                values[i] + knapsack_recursive(i + 1, capacity - weights[i]),
+            )
         return memo[i][capacity]
+
     return knapsack_recursive(0, capacity)
-  
-import unittest
+
 
 class TestSum(unittest.TestCase):
     def test_knapsack_memoization(self):
@@ -40,6 +47,7 @@ class TestSum(unittest.TestCase):
         capacity = 0
         result = knapsack_memoization(weights, values, capacity)
         self.assertEqual(result, 0)
-        
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     unittest.main()
